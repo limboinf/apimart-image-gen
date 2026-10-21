@@ -13,6 +13,20 @@ APIMart 的 GPT-Image 不是标准 OpenAI Images 接口：提交后只返回 `ta
 - 支持透明背景、多张输出、`--json` 方便 Agent 解析
 - 完成后返回实际花费（按 token 计费）
 
+## 一张图多少钱
+
+按 token 计费，出一张高清图大约 **几毛钱**（按 $1 ≈ ¥7.2 估算，仅输出费用，实际以账号折扣为准）：
+
+| 场景 | 参数 | 约合 |
+|---|---|---|
+| 2K 日常高清 | `--resolution 2k --quality medium` | ¥0.2 |
+| 2K 横图精细（16:9） | `--ar 16:9 --resolution 2k --quality high` | ¥0.3 |
+| 4K 横图（16:9） | `--ar 16:9 --resolution 4k --quality medium` | ¥0.2 |
+| 2K 方图精细 | `--resolution 2k --quality high` | ¥0.8 |
+| 1K 快速草稿 | 默认参数 | ¥0.1 |
+
+质量档位是成本大头：`xhigh` / `max` 会贵几倍，日常用 `medium` / `high` 就够。
+
 完整参数见 [SKILL.md](SKILL.md)，接口细节见 [references/api.md](references/api.md)。
 
 ## 怎么用
